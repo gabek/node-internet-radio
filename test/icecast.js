@@ -22,9 +22,3 @@ describe("handle icecast data ", function() {
 
   });
 });
-
-// Uncomment if you wish to run an integration test against this specific server
-// var getIcecastStation = require("../index.js").getIcecastStation;
-// getIcecastStation("http://tomoradio.servemp3.com:8000/listen.aac", function(error, station) {
-//   console.log(station);
-// });
