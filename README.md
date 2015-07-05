@@ -1,5 +1,6 @@
 [![Circle CI](https://circleci.com/gh/gabek/node-internet-radio.svg?style=svg)](https://circleci.com/gh/gabek/node-internet-radio)
 
+
 Get internet radio stream details via Node.js.
 Node.js module to get Now Playing information from an internet radio stream in the form of the following object:
 
@@ -14,6 +15,11 @@ The syntax is simple:
 
 ```
 getStationInfo(url, callback, [method]);
+```
+
+## Install
+```
+npm install node-internet-radio
 ```
 
 This Node.js module supports three different methods to fetch the station details of an internet radio stream.
