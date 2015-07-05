@@ -11,6 +11,7 @@
     "url": "https://github.com/gabek/node-internet-radio/issues",
     "email": "gabek@real-ity.com"
   },
+  "keywords": ["shoutcast", "radio", "icecast", "icy", "internet radio"],
   "repository": {
     "type": "git",
     "url": "https://github.com/gabek/node-internet-radio.git"
