@@ -15,13 +15,16 @@ var testStream = "http://23.27.51.2:6699/";
 describe("handle stream data", function() {
   it("Should parse a generic stream", function(done) {
 
-      getStreamStation(testStream, function(error, station) {
-        expect(station).to.exist;
-        expect(station).to.have.property('title');
-        expect(station).to.have.property('fetchsource');
-        expect(station.fetchsource).to.equal(main.StreamSource.STREAM);
-        done();
-      });
+    getStreamStation(testStream, function(error, station) {
+      expect(station).to.exist;
+      expect(station).to.have.property('title');
+      expect(station).to.have.property('fetchsource');
+      expect(station.fetchsource).to.equal(main.StreamSource.STREAM);
+      done();
+    });
 
   });
 });
+function test() {
+
+}
