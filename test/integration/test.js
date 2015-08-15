@@ -7,7 +7,7 @@ var assert = chai.assert;
 
 var main = require('../../index.js');
 
-var testStream = "http://23.27.51.2:6699";
+var testStream = "http://uwstream1.somafm.com/";
 
 describe("Try all available methods and return a station object.", function() {
   it("Should have applicable properties.", function(done) {
