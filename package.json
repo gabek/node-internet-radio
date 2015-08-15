@@ -1,6 +1,6 @@
 {
   "name": "node-internet-radio",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Node.js module to get Now Playing information from an internet radio stream.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,13 @@
     "url": "https://github.com/gabek/node-internet-radio/issues",
     "email": "gabek@real-ity.com"
   },
-  "keywords": ["shoutcast", "radio", "icecast", "icy", "internet radio"],
+  "keywords": [
+    "shoutcast",
+    "radio",
+    "icecast",
+    "icy",
+    "internet radio"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gabek/node-internet-radio.git"
