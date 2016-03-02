@@ -25,12 +25,12 @@ npm install node-internet-radio
 This Node.js module supports three different methods to fetch the station details of an internet radio stream.
 All but fetching details from the raw audio stream give you the currently playing track, bitrate, and listener count.
 
-| Method | StreamSource | Track | Bitrate | Listeners |
-| ------ | ------ | -----|------- | ---------- |
-| Shoutcast V1 | StreamSource.SHOUTCAST_V1 | ✓ | ✓ | ✓ |
-| [Shoutcast V2](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2_XML_Reponses) | StreamSource.SHOUTCAST_V2 | ✓ | ✓ | ✓ |
-| [Icecast](http://icecast.org/docs/icecast-2.4.1/server-stats.html) | StreamSource.ICECAST | ✓ | ✓ | ✓ |
-| [Raw Stream (icy metadata)](http://www.smackfu.com/stuff/programming/shoutcast.html) | StreamSource.STREAM | ✓ | X | X |
+| Method | StreamSource | Track | Bitrate | Listeners | Headers |
+| ------ | ------ | -----|------- | ---------- | ---------- |
+| Shoutcast V1 | StreamSource.SHOUTCAST_V1 | ✓ | ✓ | ✓ | X |
+| [Shoutcast V2](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2_XML_Reponses) | StreamSource.SHOUTCAST_V2 | ✓ | ✓ | ✓ | X |
+| [Icecast](http://icecast.org/docs/icecast-2.4.1/server-stats.html) | StreamSource.ICECAST | ✓ | ✓ | ✓ | X |
+| [Raw Stream (icy metadata)](http://www.smackfu.com/stuff/programming/shoutcast.html) | StreamSource.STREAM | ✓ | X | X | ✓ |
 
 ## Examples
 
@@ -57,4 +57,20 @@ To fetch the station details using a specific method simply pass it as the last 
 internetradio.getStationInfo("http://coolstream.net/", function(error, station) {
   console.log(station);
 }, internetradio.StreamSource.SHOUTCAST_V1);
+```
+
+## Server headers
+If you are interested in the server headers instead of just the now-playing information use **StreamSource.STREAM** and you'll get the server headers from the stream.
+
+```
+{ title: 'Tosca - Zuri',
+  fetchsource: 'STREAM',
+  headers:
+   { 'icy-br': '128',
+     'icy-genre': 'Ambient Chill',
+     'icy-name': 'Groove Salad',
+     'icy-notice1': '<BR>This stream requires <a href="http',
+     'icy-notice2': 'SHOUTcast Distributed Network Audio Server/Linux v1.9.5<BR>',
+     'icy-pub': '0',
+     'icy-metaint': '45000' } }
 ```

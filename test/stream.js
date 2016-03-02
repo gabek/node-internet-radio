@@ -19,6 +19,11 @@ describe("handle stream data", function() {
       expect(station).to.exist;
       expect(station).to.have.property('title');
       expect(station).to.have.property('fetchsource');
+      expect(station).to.have.property('headers');
+
+      expect(station.headers).to.have.property('icy-name');
+      expect(station.headers).to.have.property('icy-br');
+
       expect(station.fetchsource).to.equal(main.StreamSource.STREAM);
       done();
     });
