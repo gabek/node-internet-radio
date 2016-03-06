@@ -1,10 +1,10 @@
 {
   "name": "node-internet-radio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js module to get Now Playing information from an internet radio stream.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --timeout 10000"
   },
   "author": "Gabe Kangas",
   "bugs": {

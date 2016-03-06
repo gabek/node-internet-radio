@@ -13,6 +13,7 @@ var main = require("../index.js");
 var testStream = "http://ice1.somafm.com/groovesalad-128.mp3";
 
 describe("handle stream data", function() {
+
   it("Should parse a generic stream", function(done) {
 
     getStreamStation(testStream, function(error, station) {
@@ -27,9 +28,16 @@ describe("handle stream data", function() {
       expect(station.fetchsource).to.equal(main.StreamSource.STREAM);
       done();
     });
-
   });
 });
-function test() {
 
-}
+describe("Handle stream redirect", function() {
+  var redirectStream = "http://listen.radionomy.com:80/WitchHouseRadiodotcom";
+  it("Should redirect and return valid data", function(done) {
+    getStreamStation(redirectStream, function(error, station) {
+      expect(station).to.exist;
+      expect(station).to.have.property('title');
+      done();
+    });
+  });
+});
