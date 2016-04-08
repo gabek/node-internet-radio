@@ -1,6 +1,6 @@
 {
   "name": "node-internet-radio",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Node.js module to get Now Playing information from an internet radio stream.",
   "main": "index.js",
   "scripts": {
