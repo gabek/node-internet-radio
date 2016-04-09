@@ -24,6 +24,7 @@ describe("handle stream data", function() {
 
       expect(station.headers).to.have.property('icy-name');
       expect(station.headers).to.have.property('icy-br');
+      expect(station.headers).to.have.property('content-type');
 
       expect(station.fetchsource).to.equal(main.StreamSource.STREAM);
       done();
