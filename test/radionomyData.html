@@ -1,0 +1,797 @@
+
+
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+	<title>Radionomy – Hits and Beats | free online radio station</title>
+	<script id="quantcast-init">
+		var ezt = ezt || [];
+	</script>
+	<meta charset="UTF-8">
+	<meta name="description" content="All Hots &amp; Trending Hits 24x7 From The Top100 To New Releases We Cover Day to Night Follow Me on Twitter: @Hits_And_Beats , Owner: @akifansari2010 and">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Radionomy" />
+	<meta name="twitter:image" content="http://www.radionomy.com/images/shareThumbnail.png" /> <!-- 200x200 -->
+	<meta name="twitter:url" content="http://www.radionomy.com" />
+	<meta name="twitter:description" content="Radionomy - Discover and listen to radio stations that you like, or produce your own and build your audience" />
+	<meta name="twitter:creator" content="@radionomy" />
+
+
+
+	<meta property="og:title" content="Hits and Beats" />
+	<meta property="og:image" content="https://i3.radionomy.com/radios/200/9c315582-4a6c-48b6-80c3-eae740d52c72.png" />
+	<meta property="og:url" content="http://www.radionomy.com/en/radio/hitsandbeats" />
+	<meta property="og:description" content="All Hots &amp; Trending Hits 24x7 From The Top100 To New Releases We Cover Day to Night Follow Me on Twitter: @Hits_And_Beats , Owner: @akifansari2010 and Manager @viccky2009" />
+	<meta property="og:type" content="website" />
+	<meta property="fb:app_id" content="216483411309" />
+
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+
+	<link rel="stylesheet" type="text/css" href="/css/reset.css?v090115">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?v090115">
+	<link rel="stylesheet" type="text/css" href="/css/responsive.css?v171214">
+	<link rel="stylesheet" type="text/css" href="/css/jquery.mmenu.all.css?v171214">
+	<link rel="stylesheet" type="text/css" href="/css/colorpicker.css?v171214">
+	<link rel="stylesheet" type="text/css" href="/css/slick.css?v171214">
+	<link rel="stylesheet" type="text/css" href="/css/modif.css?v290515">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+	<link rel="stylesheet" type="text/css" href="/css/app/app.css?v22042016">
+	<style>
+        .homeBackground {
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background: url(/images/home/sting.jpg) center center;
+            background-size: cover;
+            height: 100%;
+        }
+	</style>
+
+	
+	
+
+
+	<script type="text/javascript" src="/js/jquery.min.js?v171214"></script>
+	<script type="text/javascript" src="/js/jquery.jplayer.min.js?v171214"></script>
+	<script type="text/javascript" src="/js/jquery.mmenu.min.all.js?v171214"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/radionomy.player.js?v191214"></script>
+	<script type="text/javascript" src="/js/radionomy.api.agentid.js"></script>
+	<script type="text/javascript" src="/js/synchrobanner.js"></script>
+	<script type="text/javascript" src="/js/common.js?v27042016"></script>
+	<script type="text/javascript" src="/js/player.js?v28042016"></script>
+	<script type="text/javascript" src="/js/website.js?v27042016"></script>
+	<script type="text/javascript" src="/js/colorpicker.js?v171214"></script>
+	<script type="text/javascript" src="/js/slick.min.js?v171214"></script>
+	<script type="text/javascript" src="/js/blur.min.js?v171214"></script>
+	<script type="text/javascript">
+		$(function () {
+			AddToHistory('/en/radio/hitsandbeats');
+		});
+	</script>
+
+	
+	
+
+
+	
+
+<script>
+    var cookiePooling = {
+        quantcastData : {
+            pCode: "p-Y-06Pcz6b21_t",
+            appId: "799A62DF-A8FF-48C5-B567-32D67102E073"
+        }
+    }
+    var ezt = ezt || [];
+
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://pixel") + ".quantserve.com/aquant.js?a=p-Y-06Pcz6b21_t";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+
+    ezt.push({
+        qacct: cookiePooling.quantcastData.pCode
+    });
+
+    cookiePooling.pushToQuantcast = function(pcode, cookieUid, label) {
+        ezt.push({
+            qacct: pcode,
+            uid: cookieUid,
+            labels: label
+        });
+    }
+
+    // Post cookie function
+    cookiePooling.postCookie = function(radioId, actionTypeUid, actionTypeName, actionTarget, label, contactId) {
+    	console.log('postCookie -> radid:' + radioId + ', actionTypeUid:' + actionTypeUid + ', actionTypeName:' + actionTypeName + ', actionTarget:' + actionTarget + ', label:' + label + ' (pcode: ' + cookiePooling.quantcastData.pCode +')');
+        var dmpCookieName = "dmp_cookieId";
+
+        var dmpCookie = $.cookie(dmpCookieName);
+
+        var cookieModel = {
+            ContactId: contactId,
+            CookieId: undefined,
+            ApplicationId: "799A62DF-A8FF-48C5-B567-32D67102E073",
+            RadioId: radioId,
+            ActionType: actionTypeUid,
+            Target: actionTarget
+        };
+        if (dmpCookie) {
+            cookieModel.CookieId = dmpCookie;
+        }
+
+        facebookTrack("ViewContent");
+
+        $.post("https://apicp.radionomy.com/api/cookies", cookieModel, function(responseData) {
+            var cookieUid = responseData;
+            $.cookie(dmpCookieName, cookieUid, {
+                path: '/',
+                expires : 365
+            });
+
+            // Push Quantcast pixel
+            cookiePooling.pushToQuantcast('p-Y-06Pcz6b21_t', cookieUid, label);
+        }, "json");
+    };
+</script>
+	
+
+	<!-- Facebook Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function()
+	{n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}
+	;if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','//connect.facebook.net/en_US/fbevents.js');
+	// Insert Your Facebook Pixel ID below.
+	fbq('init', '863704357097894');
+	fbq('track', 'PageView');
+
+	function facebookTrack(event) {
+	    fbq('track', event);
+	}
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=863704357097894&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+	<div id="app-page">
+		<div id="fb-root"></div>
+
+		
+
+<nav id="menu" style="background: url('/images/mobile/01.jpg') top center no-repeat;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;">
+	<div class="mobileMenu">
+			<a href="/en" rel="internal"><img src="/images/logoRadionomyMobile.png" width="150" height="40"></a>
+			<ul>
+				<li class="logged"><a href="/en/favorites" data-translation-id="favorites" rel="internal">Favorites</a></li>
+				<li><a href="/en/style" rel="internal" data-translation-id="listen">Listen</a></li>
+				<li><a href="/en/static/produce" rel="internal" data-translation-id="produce">Produce</a></li>
+				
+				<li><a href="http://www.radionomygroup.com/" target="_blank" data-translation-id="aboutus">About us</a></li>
+				<li>
+					<a class="mobileLang" href="#" data-translation-id="languages">Languages <span>(English)</span></a>
+					<ul>
+							<li class="toRemove"><a href="#" onclick="UpdateLanguage('fr'); return false;">Fran&#231;ais</a></li>
+							<li class="toRemove"><a href="#" onclick="UpdateLanguage('es'); return false;">Espa&#241;ol</a></li>
+							<li class="toRemove"><a href="#" onclick="UpdateLanguage('de'); return false;">Deutsch</a></li>
+					</ul>
+				</li>
+				<li>
+<form action="/en/search" id="mobileSearch" method="get">						<input name="query" class="mobileSearch" type="text" placeholder="Search on Radionomy">
+						<button class="searchGo" type="submit">
+							<img src="/images/icons/icon-mobileSearch.png">
+						</button>
+</form>				</li>
+			</ul>
+
+			<div class="goBottom">
+				<div class="mobileAccount ">
+					<a class="mobileSignIn" href="/en/account/login?returnUrl=%252fen%252fradio%252fhitsandbeats" data-translation-id="signin">Sign in</a>
+					<a class="mobileSignUp" href="/en/account/register" data-translation-id="noaccount">Don&#39;t have an account yet?</a>
+				</div>
+
+				<div class="mobileManage hide">
+					<a class="settings" href="https://accounts.radionomy.com/Profile" data-translation-id="settings" target="_blank">Settings</a>
+					<a class="logout" href="/en/account/logout?returnUrl=%2Fen%2Fradio%2Fhitsandbeats" data-translation-id="logout">Sign out</a>
+				</div>
+				<a href="/en/static/disclaimer" data-translation-id="disclaimer" rel="internal">Disclaimer</a>
+				<a href="/en/static/privacy" data-translation-id="privacy" rel="internal">Privacy</a>
+			</div>
+	</div>
+	<script>
+		$(function () {
+			$('#mobileSearch').submit(function (event) {
+				var url = '/' + language + '/search/index?' + $('#mobileSearch').serialize();
+				NavigateTo(url);
+				event.preventDefault();
+			});
+		});
+	</script>
+</nav>
+
+		<div id="site" class="">
+
+			<div id="headerMobile">
+				<div class="centered">
+					<div class="mobileMenuTrigger">
+						<a href="#menu" onclick="ShowMobileMenu(); return false;">
+							<img src="/images/icons/icon-mobileTrigger.png" width="32" height="30">
+						</a>
+					</div>
+					<img src="/images/logoRadionomyMobile.png" width="120">
+				</div>
+			</div>
+
+			
+<div id="cookieDough" style="">
+	<div class="centered">
+		<p>Cookies help us deliver our services. By using our services, you agree to our use of cookies.</p>
+		<a class="close" href="#" onclick="AcceptCookies(); return false;"><img src="/images/icons/icon-headerClose.png" alt="close" width="14" height="14"></a>
+	</div>
+</div>
+
+			
+
+			
+
+<header class="">
+	<div class="centered">
+		<span class="rlogo"><a href="/" rel="internal"><img src="/images/logoRadionomy@2x.png" alt="Radionomy" width="164" height="44" /></a></span>
+		<nav>
+			<ul>
+				<li class=""><a href="/en/style" rel="internal">Listen</a></li>
+				<li class=""><a href="/en/static/produce" rel="internal">Produce</a></li>
+				<li class=""><a href="/en/apps" rel="internal">Apps</a></li>
+				
+			</ul>
+		</nav>
+
+		<div class="header-right">
+<form action="/en/search" method="get">				<input type="search" id="search" name="query" placeholder="Search" />
+				<input type="submit" value="search" />
+				<a href="/en/search/advanced" class="advanced" rel="internal">Advanced Search</a>
+</form>
+				<div id="unlogged">
+					<a href="/en/account/login?returnUrl=%252fen%252fradio%252fhitsandbeats" class="btn">Sign in</a>
+					<a href="https://rmo.radionomy.com/settings/radio/create" class="btn login" target="_blank">Create your Radio</a>
+				</div>
+
+			<div id="lang">
+				<a href="#" onclick="return false;">EN</a>
+				<ul>
+							<li><a href="#" onclick="UpdateLanguage('fr'); return false;">FR</a></li>
+							<li><a href="#" onclick="UpdateLanguage('es'); return false;">ES</a></li>
+							<li><a href="#" onclick="UpdateLanguage('de'); return false;">DE</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="notifications" style="display: none;">
+		<div class="bubble">
+			<p>Please sign in to use this functionality</p>
+			<a class="close" onclick="$('#notifications').hide()"><img src="/images/icons/icon-headerClose.png" alt="close" width="14" height="14"></a>
+		</div>
+	</div>
+
+</header>
+
+<script>
+	$(function () {
+		$('.header-right form').submit(function (event) {
+			var url = '/' + language + '/search/index?' + $('.header-right form').serialize();
+			NavigateTo(url);
+			event.preventDefault();
+		});
+
+		$('#search').focus(function () {
+			$(this).addClass('focus');
+			$('.advanced').slideDown();
+		});
+		$('#search').focusout(function () {
+			$(this).removeClass('focus');
+			$('.advanced').slideUp();
+		});
+	});
+</script>
+			
+
+			<div id="wrap">				
+				
+
+
+
+
+
+<div style="display: none;" class="init">
+</div>
+
+<div id="radioProfileTop">
+	<div id="radioProfileInfo">
+		<div class="radioCover"><a href="/en/radio/hitsandbeats/index" rel="internal"><img src="https://i3.radionomy.com/radios/400/9c315582-4a6c-48b6-80c3-eae740d52c72.png" alt="Hits and Beats" width="250"></a></div>
+		<div class="radioPlay"><div class="radioPlayBtn" data-play-stream="{ &quot;mp3&quot;: &quot;http://listen.radionomy.com/hitsandbeats&quot;, &quot;title&quot;: &quot;Hits and Beats&quot;, &quot;isFavorite&quot;: false, &quot;url&quot;: &quot;hitsandbeats&quot;, &quot;logo&quot;: &quot;https://i3.radionomy.com/radios/400/9c315582-4a6c-48b6-80c3-eae740d52c72.png&quot;, &quot;song&quot;: &quot; - &quot;, &quot;radioUID&quot;: &quot;9c315582-4a6c-48b6-80c3-eae740d52c72&quot; }"></div></div>
+
+		<div class="radioDetails">
+			<h1 class="radioName">Hits and Beats</h1>
+		    <p class="radioGenre">
+                        <a href="/en/style/country/country" rel="internal">Country</a>
+                             /
+                        <a href="/en/style/hits/hits%20usa" rel="internal">Hits USA</a>
+                             /
+                        <a href="/en/style/hits/top%20charts" rel="internal">Top Charts</a>
+                             /
+                        <a href="/en/style/pop-rock/pop" rel="internal">Pop</a>
+                             /
+                        <a href="/en/style/pop-rock/rock" rel="internal">Rock</a>
+
+		    </p>
+			
+			<p class="radioStream">
+				<a href="http://listen.radionomy.com/hitsandbeats" target="_blank">
+http://listen.radionomy.com/hitsandbeats
+				</a>
+			</p>
+			<p class="radioDesc">All Hots &amp; Trending Hits 24x7 From The Top100 To New Releases We Cover Day to Night Follow Me on Twitter: @Hits_And_Beats , Owner: @akifansari2010 and Manager @viccky2009</p>
+		    <ul>
+
+		            <li class="one"><a href="/en/search?query=Pop" rel="internal">Pop</a></li>
+		            <li class="two"><a href="/en/search?query=Rock" rel="internal">Rock</a></li>
+		            <li class="three"><a href="/en/search?query=Country" rel="internal">Country</a></li>
+		            <li class="four"><a href="/en/search?query=TopCharts" rel="internal">TopCharts</a></li>
+		            <li class="five"><a href="/en/search?query=Top100" rel="internal">Top100</a></li>
+		    </ul>
+		</div>
+	</div>
+
+
+	<div id="radioProfileActions">
+		<ul>
+			<li><a class="play" href="#">Play this radio station</a></li>
+			<li><a class="fav" href="#" onclick="AddFavorite(&#39;9c315582-4a6c-48b6-80c3-eae740d52c72&#39;, event); return false;">Add to favorites</a></li>
+			<li><a class="download" href="http://listen.radionomy.com/hitsandbeats.m3u" target="_blank">Listen to this station in your media player</a></li>
+			<li><a class="share" href="/en/radio/hitsandbeats/share" rel="internal">Exportable player</a></li>
+
+					<li><a class="website" href="http://hitsandbeats.weebly.com/" target="_blank">Website</a></li>
+		</ul>
+
+	</div>
+</div>
+
+<div id="radioProfileBottom">
+	
+
+
+
+<script>
+    try {
+        window.titleForPage = 'Radionomy – Hits and Beats | free online radio station';
+        window.metaForPage = 'All Hots &amp; Trending Hits 24x7 From The Top100 To New Releases We Cover Day to Night Follow Me on Twitter: @Hits_And_Beats , Owner: @akifansari2010 and';
+    } catch (err) {
+        
+    }
+    var fallBackTrackImage = "";
+    $(function() {
+        fallBackTrackImage = $("div.radioCover img").attr("src").replace("/400/", "/200/");
+    });
+
+    function errorLastTrackImage(imgElement) {
+        imgElement.attr("src", fallBackTrackImage);
+    }
+
+    function errorArtistImage(imgElement) {
+        imgElement.parent().hide();
+    }
+
+    var QC_RadioUrl = "hitsandbeats";
+</script>
+    <div id="radioProfileTracklist">
+        <h3>Last tracks played</h3>
+
+
+
+
+
+    <div class="tracklist first">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/bf9528af-ef95-4ddf-9df2-fdd322c7558e?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="Good Grief" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Bastille</p>
+            <p>Good Grief</p>
+
+                <p class="playing">on air</p>
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/80f49542-414f-466f-874a-61c1786f461e?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="What Do You Love (feat. Jacob Banks)" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Seeb</p>
+            <p>What Do You Love (feat. Jacob Banks)</p>
+
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/74d59db6-7f24-42a0-bae8-ab5efcef36d8?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="Surfin&#39; (feat. Pharrell Williams)" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Kid Cudi</p>
+            <p>Surfin&#39; (feat. Pharrell Williams)</p>
+
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/4796b3e8-6a06-492c-b007-fc32db868823?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="cash surender best hits" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist"></p>
+            <p>cash surender best hits</p>
+
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/bb64e98b-f45d-45f0-9243-4f36b054e796?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="Believer" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Major Lazer &amp; Showtek</p>
+            <p>Believer</p>
+
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/655a95a6-e9e5-4ba0-8ed9-b4c04c853ffb?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="Fresh Eyes" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Andy Grammer</p>
+            <p>Fresh Eyes</p>
+
+        </div>
+    </div>
+
+
+    <div class="tracklist ">
+
+        
+        
+        <img src="https://i3.radionomy.com/tracks/400/90f90391-323b-4250-b4f0-0c5b4997bd33?radiouid=9c315582-4a6c-48b6-80c3-eae740d52c72" alt="I Wanna Know (feat. Nico &amp; Vinz)" width="50" height="50">
+
+        <div class="tracklistInfo">
+            <p class="artist">Alesso</p>
+            <p>I Wanna Know (feat. Nico &amp; Vinz)</p>
+
+        </div>
+    </div>
+
+<script>
+	$(function () {
+		if(lastTracksPlayedTimeout) clearTimeout(lastTracksPlayedTimeout);
+
+			
+				lastTracksPlayedTimeout = setTimeout(GetLastTrackPlayed, 18730);
+			
+	});
+</script>
+    </div>
+        <div id="radioProfileTrending">
+
+            <h3>Trending artists</h3>
+
+            <div class="trending">
+
+<a href="/en/artist/247919/Nicki-Minaj" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/41b6f33e-2c59-4a82-a32c-0bbd12d68a78" alt="Nicki Minaj" width="90" onerror="errorArtistImage($(this))" title="Nicki Minaj">
+</a>
+
+<a href="/en/artist/229441/Sam-Smith" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/99aa61ad-d024-46fd-a42a-3e889e667aef" alt="Sam Smith" width="90" onerror="errorArtistImage($(this))" title="Sam Smith">
+</a>
+
+<a href="/en/artist/8142/Trey-Songz" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/cf5436d9-4ab3-4d25-acd4-f020f0b7d660" alt="Trey Songz" width="90" onerror="errorArtistImage($(this))" title="Trey Songz">
+</a>
+
+<a href="/en/artist/9329/Chris-Brown" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/bfc921e1-9a9c-48db-a2bb-d0e6f51c2d17" alt="Chris Brown" width="90" onerror="errorArtistImage($(this))" title="Chris Brown">
+</a>
+
+<a href="/en/artist/107951/Drake" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/eb80926e-9799-4c3d-8594-785769b32be5" alt="Drake" width="90" onerror="errorArtistImage($(this))" title="Drake">
+</a>
+
+<a href="/en/artist/11693/Calvin-Harris" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/11d50606-f51a-4ab1-beef-f849cc374c02" alt="Calvin Harris" width="90" onerror="errorArtistImage($(this))" title="Calvin Harris">
+</a>
+
+<a href="/en/artist/8613/Rihanna" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/89b4a755-0d14-492b-84df-130b43d39f23" alt="Rihanna" width="90" onerror="errorArtistImage($(this))" title="Rihanna">
+</a>
+
+<a href="/en/artist/9867/Ne-Yo" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/0398a488-247c-4d53-88bb-c8ff5681411b" alt="Ne-Yo" width="90" onerror="errorArtistImage($(this))" title="Ne-Yo">
+</a>
+
+<a href="/en/artist/5306/Pitbull" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/91cfc72b-3929-42c0-8673-b2c1523e3b5d" alt="Pitbull" width="90" onerror="errorArtistImage($(this))" title="Pitbull">
+</a>
+
+<a href="/en/artist/5308/SIA" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/95451b60-3079-401e-92a6-15bd297ce17b" alt="SIA" width="90" onerror="errorArtistImage($(this))" title="SIA">
+</a>
+
+<a href="/en/artist/9656/Fall-out-Boy" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/96d2993d-bfd1-43ae-a38a-9df2bee5598e" alt="Fall out Boy" width="90" onerror="errorArtistImage($(this))" title="Fall out Boy">
+</a>
+
+<a href="/en/artist/17936/The-Script" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/917e7f74-a944-4c18-8b2a-28c4121fefe1" alt="The Script" width="90" onerror="errorArtistImage($(this))" title="The Script">
+</a>
+
+<a href="/en/artist/69959/magic" rel="internal">
+        <img class="artist" src="https://i3.radionomy.com/artists/300/6ccf5df9-855c-4bdd-b4e9-7fc55564f537" alt="magic" width="90" onerror="errorArtistImage($(this))" title="magic">
+</a>
+</div>
+
+        </div>
+<div id="radioProfileAds">
+    <h3>Advertising</h3>
+    <div class="ads">
+            <iframe width="300" height="250" scrolling="no" style="border: 0; margin: 0; padding: 0" src="/en/ad/site"></iframe>
+        
+    </div>
+</div>
+
+
+<script type="text/javascript" class="init">
+    (function() {
+    	if (cookiePooling && cookiePooling.postCookie) {
+    		// function(radioId, actionTypeUid, actionTypeName, actionTarget, label, contactId)
+            cookiePooling.postCookie(undefined, "762c6ae7-acd9-458f-abdd-742341136fd6", "Browse", "hitsandbeats", "Country.Country", "");
+        }
+    }());
+</script>
+
+		<iframe width="728" height="90" scrolling="no" style="display: block; margin: 0 auto; border:0; padding: 0;" src="/en/ad/sitehorizontal"></iframe>
+</div>
+
+<div style="display: none;" class="init">
+	<script>
+		var addToFavoriteText = 'Add to favorites';
+		var removeFromFavoriteText = 'Remove from favorites';
+		var radioUID = '9c315582-4a6c-48b6-80c3-eae740d52c72';
+
+		$(function () {
+			RefreshRadioTiles();
+
+			$('#radioProfileActions a.play').click(function (event) {
+				var playBtn = $('#radioProfileInfo div.radioPlayBtn');
+				if (currentStream.isPlaying == false || currentStream.radioUID != playBtn.data('play-stream').radioUID) {
+					playBtn.click();
+				}
+				event.preventDefault();
+			});
+		});
+	</script>
+</div>
+
+			</div>
+
+			
+
+<div id="footer">
+    <ul class="first show">
+        <li>
+            <a class="lang" href="#" onclick="ToggleLanguages(); return false;">Languages</a>
+            <ul class="switchLang">
+                    <li><a href="#" onclick="UpdateLanguage('en'); return false;">English</a></li>
+                    <li><a href="#" onclick="UpdateLanguage('fr'); return false;">Fran&#231;ais</a></li>
+                    <li><a href="#" onclick="UpdateLanguage('es'); return false;">Espa&#241;ol</a></li>
+                    <li><a href="#" onclick="UpdateLanguage('de'); return false;">Deutsch</a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.radionomygroup.com/" target="_blank">About us</a></li>
+        <li><a href="/en/static/privacy" rel="internal">Privacy</a></li>
+		<li><a href="/en/static/disclaimer" rel="internal">Disclaimer</a></li>
+        <li><a href="https://www.shoutcast.com" target="_blank">SHOUTcast</a></li>
+		<li><a href="http://www.radionomygroup.com/en/jobs" target="_blank">Jobs</a></li>
+        <li><a href="http://board.radionomy.com/" target="_blank">Forums</a></li>
+
+        <div style="display: inline-block; vertical-align: middle;">
+            <div class="fb-like" style="vertical-align:top;" data-href="http://www.facebook.com/radionomy" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+            <a class="twitter-follow-button"
+                href="https://twitter.com/radionomy"
+                data-show-count="false"
+                data-lang="en">
+                Follow @Radionomy
+            </a>
+        </div>
+    </ul>
+</div>
+
+
+
+			
+
+
+<div style="display: none;" class="init">
+	<script type="text/javascript">
+		var scheme = 'http';
+
+		var language = 'en';
+		var controller = 'radio';
+		var action = 'index';
+
+		var fullUrl = '%2fen%2fradio%2fhitsandbeats';
+		var currentUrl = controller + '/' + action;
+
+		var isAuthenticated = false;
+
+		var radioScrollEnabled = false;
+
+		var hostUrl = 'https://www.radionomy.com';
+		var accountUrl = 'https://accounts.radionomy.com';
+
+		var adText = 'Advertising';
+		var countryCode = 'US';
+
+		var dev = hostUrl.match(/.local$/i);
+	</script>
+</div>
+
+
+			
+
+		</div>
+
+		
+		
+
+<div id="player" class="" style="display: none;">
+	<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+	<div id="jp_container_1" class="jp-audio-stream">
+		<div class="jp-type-single">
+			<div class="jp-gui jp-interface">
+				<ul class="jp-controls">
+					<li><a href="#" class="jp-play" tabindex="1">Play</a></li>
+					<li><a href="#" class="jp-pause" tabindex="1">Stop</a></li>
+					<li><a href="#" class="getVolume">Volume</a></li>
+					<!-- <li><a href="#" class="jp-mute" tabindex="1" title="mute">Mute</a></li>
+					<li><a href="#" class="jp-unmute" tabindex="1" title="unmute">Unmute</a></li>
+					<!-- <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li> -->
+				</ul>
+				<div class="volumeWrap" style="display:none;">
+					<div class="jp-volume-bar">
+						<img class="down" src="/images/player/playerVolumeDown.png" width="16" height="16">
+						<div class="jp-volume-bar-value"></div>
+						<img class="up" src="/images/player/playerVolumeUp.png" width="16" height="16">
+					</div>
+				</div>
+			</div>
+			<div class="jp-details">
+				<ul>
+					<li><img src="/images/player/playerCover.jpg" width="25" height="25"><a href="#" class="jp-title" rel="internal"></a></li>
+				</ul>
+			</div>
+			<div class="rad-tracks">
+				<ul>
+					<li>-</li>
+				</ul>
+			</div>
+			<div class="rad-actions">
+				<ul>
+					<li class="fav"><a class="tooltips fav" href="#"><img src="/images/player/playerUnfav.png" width="40" height="41"><span>Add to favorites</span></a></li>
+					<li class="favlist"><a class="tooltips list" href="#"><img src="/images/player/playerFavList.png" width="40" height="41"><span>Your favorites</span></a></li>
+					<li class="detach"><a class="tooltips detach" href="#"><img src="/images/player/playerDetach.png" width="40" height="41"><span>Detach player</span></a></li>
+					<li class="share"><a class="tooltips share" href="#"><img src="/images/player/playerShare.png" width="40" height="41"><span>Share this radio station</span></a></li>
+				</ul>
+			</div>
+			<div class="concert" style="display:none;">
+				<a href="" target="_blank">Soon in concert</a>
+			</div>
+			<div class="jp-no-solution">
+				<span>Update required</span>
+				To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+			</div>
+		</div>
+	</div>
+
+	<div class="rad-favlist" style="display: none;">
+	</div>
+
+	<div class="rad-shareOptions" style="display:none;">
+		<ul>
+			<li><a href="#" class="export" rel="internal">Export</a></li>
+			<li><a href="#" class="tw" target="_blank">Twitter</a></li>
+			<li><a href="#" class="fb" target="_blank">Facebook</a></li>
+		</ul>
+	</div>
+	<div class="rad-adsBanner" style="display:none;">
+		<p>Advertising</p>
+		<a href="#" class="close"><img src="/images/icons/icon-close.png" onclick="HidePlayerAd(); return false;" width="15" height="15"></a>
+		<div class="playerBanner"></div>
+	</div>
+	<div class="rad-adsBannerSquare" style="display:none;">
+		<p>Advertising</p>
+		<a href="#" class="close"><img src="/images/icons/icon-close.png" onclick="HidePlayerAd(); return false;" width="15" height="15"></a>
+		<div class="playerBanner"></div><br>
+	</div>
+
+
+</div>
+
+		<script>
+	(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-2800126-3', 'auto');
+	ga('require', 'linkid', 'linkid.js');
+	ga('require', 'displayfeatures');
+	ga('send', 'pageview');
+</script>
+
+
+		<script type="text/javascript">
+			window.twttr = (function (d, s, id) {
+				var t, js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+				return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+			}(document, "script", "twitter-wjs"));
+		</script>
+
+		<script>
+			(function (d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+	</div>
+</body>
+</html>
