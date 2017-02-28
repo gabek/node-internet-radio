@@ -24,10 +24,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "request": "^2.58.0",
-    "xml2js": "^0.4.9",
     "async": "^1.3.0",
-    "lodash": "^3.10.0"
+    "cheerio": "^0.22.0",
+    "lodash": "^3.10.0",
+    "request": "^2.58.0",
+    "xml2js": "^0.4.9"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
