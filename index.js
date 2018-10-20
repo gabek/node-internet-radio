@@ -1,6 +1,4 @@
 var async = require('async');
-var _ = require("lodash");
-
 var icecast = require('./lib/icecast.js');
 var shoutcast = require('./lib/shoutcast.js');
 var icystream = require('./lib/icystream.js');
@@ -65,7 +63,10 @@ function getStationInfo(url, callback, method) {
             });
         }
     ], function (error, results) {
-        var stations = _.compact(results);
+        var stations = [];
+        if (Array.isArray(results)) {
+            stations = results.filter(Boolean);
+        }
         if (stations.length > 0) {
             var station = stations[0];
             return callback(null, station);
