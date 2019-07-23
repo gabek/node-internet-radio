@@ -5,5 +5,5 @@ var testStream = "http://23.227.178.146";
 //var testStream = "http://andromeda.shoutca.st:8411/stream2";
 
 internetradio.getStationInfo(testStream, function(error, station) {
-  //console.log(station);
+  console.log(station);
 });

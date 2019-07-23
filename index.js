@@ -42,43 +42,51 @@ function getStationInfo(url, callback, method) {
 
   findStation(url, callback)
     .then(x => {
-      console.log(x);
+      console.log("Main Function Then Block: - " + x);
     })
     .catch(err => {
-      console.log(err);
+      console.log("Main Function Catch Block: - " + err);
     });
 
-  async function findStation(url, callback) {
+  async function findStation(url) {
     this.results = await V1(url);
+    console.log("V1(1st) Function Returns: " + this.results);
 
-    if (this.results == null || this.results == "undefined") {
+    if (this.results == null || typeof this.results == "undefined") {
       this.results = await V2(url);
+      console.log("V2(2nd) Function Returns: " + this.results);
     }
-    if (this.results == null || this.results == "undefined") {
+    if (this.results == null || typeof this.results == "undefined") {
       this.results = await Ice(url);
+      console.log("IceCast(3rd) Function Returns: " + this.results);
     }
-    if (this.results == null || this.results == "undefined") {
+    if (this.results == null || typeof this.results == "undefined") {
       this.results = await Icy(url);
+      console.log("IcyStream(4th) Function Returns: " + this.results);
     }
 
     // Async functions for use with Promise Wrapper functions
     function V1(url) {
-      shoutcast._getShoutcastV1Station(url, function(error, station) {
+      return shoutcast._getShoutcastV1Station(url, function(error, station) {
+        console.log("V1 === " + station);
         return station;
       });
     }
     function V2(url) {
-      shoutcast._getShoutcastV2Station(url, function(error, station) {
+      return shoutcast._getShoutcastV2Station(url, function(error, station) {
+        console.log("V2 ===" + station);
         return station;
       });
     }
     function Icy(url) {
-      icystream.getStreamStation(url, function(error, station) {
+      return icystream.getStreamStation(url, function(error, station) {
+        console.log("IcyStream === " + station);
         return station;
       });
     }
     function Ice(url) {
-      icecast._getIcecastStation(url, function(error, station) {
+      return icecast._getIcecastStation(url, function(error, station) {
+        console.log("IceCast === " + station);
         return station;
       });
     }
