@@ -40,9 +40,10 @@ function getStationInfo(url, callback, method) {
     return methodHandler(url, callback);
   }
 
-  findStation(url, callback)
+  return findStation(url, callback)
     .then(x => {
-      console.log("Main Function Then Block: - " + x);
+      console.log(x);
+      return x;
     })
     .catch(err => {
       console.log("Main Function Catch Block: - " + err);
@@ -65,33 +66,55 @@ function getStationInfo(url, callback, method) {
       console.log("IcyStream(4th) Function Returns: " + this.results);
     }
 
-    // Async functions for use with Promise Wrapper functions
+    // Promise wrapper functions
     function V1(url) {
-      return shoutcast._getShoutcastV1Station(url, function(error, station) {
-        console.log("V1 === " + station);
-        return station;
+      return new Promise((resolve, reject) => {
+        try {
+          shoutcast.getShoutcastV1Station(url, function(error, station) {
+            resolve(station);
+            return station;
+          });
+        } catch (err) {
+          reject(err);
+        }
       });
     }
     function V2(url) {
-      return shoutcast._getShoutcastV2Station(url, function(error, station) {
-        console.log("V2 ===" + station);
-        return station;
+      return new Promise((resolve, reject) => {
+        try {
+          shoutcast.getShoutcastV2Station(url, function(error, station) {
+            resolve(station);
+            return station;
+          });
+        } catch (err) {
+          reject(err);
+        }
       });
     }
     function Icy(url) {
-      return icystream.getStreamStation(url, function(error, station) {
-        console.log("IcyStream === " + station);
-        return station;
+      return new Promise((resolve, reject) => {
+        try {
+          icystream.getStreamStation(url, function(error, station) {
+            resolve(station);
+            return station;
+          });
+        } catch (err) {
+          reject(err);
+        }
       });
     }
     function Ice(url) {
-      return icecast._getIcecastStation(url, function(error, station) {
-        console.log("IceCast === " + station);
-        return station;
+      return new Promise((resolve, reject) => {
+        try {
+          icecast.getIcecastStation(url, function(error, station) {
+            resolve(station);
+            return station;
+          });
+        } catch (err) {
+          reject(err);
+        }
       });
     }
-
-    return this.results;
   }
 
   /* Otherwise try them all
