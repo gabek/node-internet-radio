@@ -1,4 +1,3 @@
-var async = require("async");
 var icecast = require("./lib/icecast.js");
 var shoutcast = require("./lib/shoutcast.js");
 var icystream = require("./lib/icystream.js");
@@ -31,7 +30,6 @@ function getStationInfo(url, callback, method) {
     case StreamSource.RADIONOMY:
       methodHandler = radionomy.getRadionomyStation;
     default:
-    // No specific handler. Try them all below.
   }
 
   // If we have a specific method to fetch from then
@@ -40,39 +38,43 @@ function getStationInfo(url, callback, method) {
     return methodHandler(url, callback);
   }
 
-  return findStation(url, callback)
-    .then(x => {
-      console.log(x);
-      return x;
+  // Resolve the promise from the async function and return the station with the callback
+  // We shouldnt mix callbacks and promises but for backwards compatability I am breaking 
+  // the law here......
+  return findStation(url)
+    .then(station => {
+      return callback(null,station);
     })
     .catch(err => {
-      console.log("Main Function Catch Block: - " + err);
+      return callback(err);
     });
 
+  /*
+  @params -> string: url of given stream
+  @returns -> mixed (object if successful, string if error)
+  */
   async function findStation(url) {
     this.results = await V1(url);
-    console.log("V1(1st) Function Returns: " + this.results);
-
+    // Find which provider has our station
     if (this.results == null || typeof this.results == "undefined") {
       this.results = await V2(url);
-      console.log("V2(2nd) Function Returns: " + this.results);
     }
     if (this.results == null || typeof this.results == "undefined") {
       this.results = await Ice(url);
-      console.log("IceCast(3rd) Function Returns: " + this.results);
     }
     if (this.results == null || typeof this.results == "undefined") {
       this.results = await Icy(url);
-      console.log("IcyStream(4th) Function Returns: " + this.results);
     }
+    return this.results;
 
-    // Promise wrapper functions
+    //==================================================================================== 
+    //=                  Promise wrapper functions                                       =
+    //====================================================================================
     function V1(url) {
       return new Promise((resolve, reject) => {
         try {
           shoutcast.getShoutcastV1Station(url, function(error, station) {
             resolve(station);
-            return station;
           });
         } catch (err) {
           reject(err);
@@ -84,7 +86,6 @@ function getStationInfo(url, callback, method) {
         try {
           shoutcast.getShoutcastV2Station(url, function(error, station) {
             resolve(station);
-            return station;
           });
         } catch (err) {
           reject(err);
@@ -96,7 +97,6 @@ function getStationInfo(url, callback, method) {
         try {
           icystream.getStreamStation(url, function(error, station) {
             resolve(station);
-            return station;
           });
         } catch (err) {
           reject(err);
@@ -108,7 +108,6 @@ function getStationInfo(url, callback, method) {
         try {
           icecast.getIcecastStation(url, function(error, station) {
             resolve(station);
-            return station;
           });
         } catch (err) {
           reject(err);
@@ -116,54 +115,6 @@ function getStationInfo(url, callback, method) {
       });
     }
   }
-
-  /* Otherwise try them all
-  async.parallel(
-    [
-      function(asyncCallback) {
-        shoutcast.getShoutcastV1Station(url, function(error, station) {
-          asyncResultReturned(error, station, asyncCallback);
-        });
-      },
-      function(asyncCallback) {
-        shoutcast.getShoutcastV2Station(url, function(error, station) {
-          asyncResultReturned(error, station, asyncCallback);
-        });
-      },
-      function(asyncCallback) {
-        icecast.getIcecastStation(url, function(error, station) {
-          asyncResultReturned(error, station, asyncCallback);
-        });
-      },
-      function(asyncCallback) {
-        icystream.getStreamStation(url, function(error, station) {
-          asyncResultReturned(error, station, asyncCallback);
-        });
-      }
-    ],
-    function(error, results) {
-      var stations = [];
-      if (Array.isArray(results)) {
-        stations = results.filter(Boolean);
-      }
-      if (stations.length > 0) {
-        var station = stations[0];
-        return callback(null, station);
-      } else {
-        return callback(
-          new Error("Not able to fetch station data via any available methods.")
-        );
-      }
-    }
-  );
-
-  function asyncResultReturned(error, station, callback) {
-    if (station) {
-      return callback(true, station);
-    } else {
-      return callback(null, null);
-    }
-  }*/
 }
 
 module.exports.StreamSource = StreamSource;
