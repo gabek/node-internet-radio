@@ -1,14 +1,14 @@
-var icecast = require("./lib/icecast.js");
-var shoutcast = require("./lib/shoutcast.js");
-var icystream = require("./lib/icystream.js");
-var radionomy = require("./lib/radionomy");
+var icecast = require('./lib/icecast.js');
+var shoutcast = require('./lib/shoutcast.js');
+var icystream = require('./lib/icystream.js');
+var radionomy = require('./lib/radionomy');
 
 var StreamSource = {
-  SHOUTCAST_V1: "SHOUTCAST_V1",
-  SHOUTCAST_V2: "SHOUTCAST_V2",
-  STREAM: "STREAM",
-  ICECAST: "ICECAST",
-  RADIONOMY: "RADIONOMY"
+  SHOUTCAST_V1: 'SHOUTCAST_V1',
+  SHOUTCAST_V2: 'SHOUTCAST_V2',
+  STREAM: 'STREAM',
+  ICECAST: 'ICECAST',
+  RADIONOMY: 'RADIONOMY'
 };
 
 function getStationInfo(url, callback, method) {
@@ -39,11 +39,11 @@ function getStationInfo(url, callback, method) {
   }
 
   // Resolve the promise from the async function and return the station with the callback
-  // We shouldnt mix callbacks and promises but for backwards compatability I am breaking 
+  // We shouldnt mix callbacks and promises but for backwards compatability I am breaking
   // the law here......
   return findStation(url)
     .then(station => {
-      return callback(null,station);
+      return callback(null, station);
     })
     .catch(err => {
       return callback(err);
@@ -56,18 +56,18 @@ function getStationInfo(url, callback, method) {
   async function findStation(url) {
     this.results = await V1(url);
     // Find which provider has our station
-    if (this.results == null || typeof this.results == "undefined") {
+    if (this.results == null || typeof this.results == 'undefined') {
       this.results = await V2(url);
     }
-    if (this.results == null || typeof this.results == "undefined") {
+    if (this.results == null || typeof this.results == 'undefined') {
       this.results = await Ice(url);
     }
-    if (this.results == null || typeof this.results == "undefined") {
+    if (this.results == null || typeof this.results == 'undefined') {
       this.results = await Icy(url);
     }
     return this.results;
 
-    //==================================================================================== 
+    //====================================================================================
     //=                  Promise wrapper functions                                       =
     //====================================================================================
     function V1(url) {
