@@ -1,14 +1,12 @@
 var icecast = require('./lib/icecast.js');
 var shoutcast = require('./lib/shoutcast.js');
 var icystream = require('./lib/icystream.js');
-var radionomy = require('./lib/radionomy');
 
 var StreamSource = {
   SHOUTCAST_V1: 'SHOUTCAST_V1',
   SHOUTCAST_V2: 'SHOUTCAST_V2',
   STREAM: 'STREAM',
-  ICECAST: 'ICECAST',
-  RADIONOMY: 'RADIONOMY'
+  ICECAST: 'ICECAST'
 };
 
 function getStationInfo(url, callback, method) {
@@ -27,8 +25,6 @@ function getStationInfo(url, callback, method) {
     case StreamSource.STREAM:
       methodHandler = icystream.getStreamStation;
       break;
-    case StreamSource.RADIONOMY:
-      methodHandler = radionomy.getRadionomyStation;
     default:
   }
 

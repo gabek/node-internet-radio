@@ -33,7 +33,7 @@ describe("handle stream data", function() {
 });
 
 describe("Handle stream redirect", function() {
-  var redirectStream = "http://listen.radionomy.com:80/WitchHouseRadiodotcom";
+  var redirectStream = "https://samcloud.spacial.com/api/listen?sid=73045&rid=155986&f=mp3,any&br=128000,any&m=sc";
   it("Should redirect and return valid data", function(done) {
     getStreamStation(redirectStream, function(error, station) {
       expect(station).to.exist;
