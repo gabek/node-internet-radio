@@ -10,13 +10,13 @@ var assert = chai.assert;
 var getStreamStation = require("../lib/icystream.js").getStreamStation;
 var fs = require('fs');
 var main = require("../index.js");
-var testStream = "http://ice1.somafm.com/groovesalad-128.mp3";
+var testStream = "http://sc6.easywebcommunications.com:8007/1?cb=930346.mp3";
 
-describe("handle stream data", function() {
+describe("handle stream data", function () {
 
-  it("Should parse a generic stream", function(done) {
+  it("Should parse a generic stream", function (done) {
 
-    getStreamStation(testStream, function(error, station) {
+    getStreamStation(testStream, function (error, station) {
       expect(station).to.exist;
       expect(station).to.have.property('title');
       expect(station).to.have.property('fetchsource');
@@ -32,10 +32,10 @@ describe("handle stream data", function() {
   });
 });
 
-describe("Handle stream redirect", function() {
-  var redirectStream = "https://samcloud.spacial.com/api/listen?sid=73045&rid=155986&f=mp3,any&br=128000,any&m=sc";
-  it("Should redirect and return valid data", function(done) {
-    getStreamStation(redirectStream, function(error, station) {
+describe("Handle stream redirect", function () {
+  var redirectStream = "http://listen.radionomy.com:80/WitchHouseRadiodotcom";
+  it("Should redirect and return valid data", function (done) {
+    getStreamStation(redirectStream, function (error, station) {
       expect(station).to.exist;
       expect(station).to.have.property('title');
       done();
