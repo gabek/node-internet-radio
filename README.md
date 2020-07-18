@@ -1,6 +1,3 @@
-[![Circle CI](https://circleci.com/gh/gabek/node-internet-radio.svg?style=svg)](https://circleci.com/gh/gabek/node-internet-radio)
-
-
 Get internet radio stream details via Node.js.
 Node.js module to get Now Playing information from an internet radio stream in the form of the following object:
 
