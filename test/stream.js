@@ -10,7 +10,7 @@ var assert = chai.assert;
 var getStreamStation = require("../lib/icystream.js").getStreamStation;
 var fs = require('fs');
 var main = require("../index.js");
-var testStream = "http://14833.live.streamtheworld.com/SAM04AAC147.mp3";
+var testStream = "http://ice1.somafm.com/groovesalad-128-mp3";
 
 describe("handle stream data", function () {
 
