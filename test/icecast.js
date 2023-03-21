@@ -1,11 +1,11 @@
-var chai = require("chai");
-var expect = chai.expect;
-var assert = chai.assert;
+const chai = require("chai");
+const expect = chai.expect;
+const assert = chai.assert;
 
-var parseIcecastResponse = require("../lib/icecast.js").parseIcecastResponse;
-var fs = require('fs');
-var main = require("../index.js");
-var stream = "http://tomoradio.servemp3.com:8000/listen.aac";
+const parseIcecastResponse = require("../lib/icecast.js").parseIcecastResponse;
+const fs = require('fs');
+const main = require("../index.js");
+const stream = "http://tomoradio.servemp3.com:8000/listen.aac";
 
 describe("handle icecast data ", function() {
   it("Should parse an icecast json file", function(done) {

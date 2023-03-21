@@ -3,14 +3,14 @@
 // not sure how to test the functionality without actually connecting.
 // On the plus side, it's more valid of a test.
 
-var chai = require("chai");
-var expect = chai.expect;
-var assert = chai.assert;
+const chai = require("chai");
+const expect = chai.expect;
+const assert = chai.assert;
 
-var getStreamStation = require("../lib/icystream.js").getStreamStation;
-var fs = require('fs');
-var main = require("../index.js");
-var testStream = "http://ice1.somafm.com/groovesalad-128-mp3";
+const getStreamStation = require("../lib/icystream.js").getStreamStation;
+const fs = require('fs');
+const main = require("../index.js");
+const testStream = "http://ice1.somafm.com/groovesalad-128-mp3";
 
 describe("handle stream data", function () {
 
@@ -33,7 +33,7 @@ describe("handle stream data", function () {
 });
 
 describe("Handle stream redirect", function () {
-  var redirectStream = "http://listen.radionomy.com:80/WitchHouseRadiodotcom";
+  const redirectStream = "http://listen.radionomy.com:80/WitchHouseRadiodotcom";
   it("Should redirect and return valid data", function (done) {
     getStreamStation(redirectStream, function (error, station) {
       expect(station).to.exist;

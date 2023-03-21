@@ -1,11 +1,11 @@
-var chai = require("chai");
-var expect = chai.expect;
-var assert = chai.assert;
+const chai = require("chai");
+const expect = chai.expect;
+const assert = chai.assert;
 
-var parseV2Response = require("../lib/shoutcast.js").parseV2Response;
-var main = require("../index.js");
-var fs = require('fs');
-var testUrl = "http://cheapshoutcast.com/centovacastv3-shoutcastv2-demo";
+const parseV2Response = require("../lib/shoutcast.js").parseV2Response;
+const main = require("../index.js");
+const fs = require('fs');
+const testUrl = "http://cheapshoutcast.com/centovacastv3-shoutcastv2-demo";
 
 describe("handle shoutcast v2 data ", function() {
   it("Should read a Shoucast v2 metadata xml file and parse it", function(done) {
