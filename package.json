@@ -24,12 +24,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "request": "^2.58.0",
-    "xml2js": "^0.4.9"
+    "cheerio": "^1.0.0-rc.12",
+    "request": "^2.88.2",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^6.2.0"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }

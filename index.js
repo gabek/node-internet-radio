@@ -1,8 +1,8 @@
-var icecast = require('./lib/icecast.js');
-var shoutcast = require('./lib/shoutcast.js');
-var icystream = require('./lib/icystream.js');
+const icecast = require('./lib/icecast.js');
+const shoutcast = require('./lib/shoutcast.js');
+const icystream = require('./lib/icystream.js');
 
-var StreamSource = {
+const StreamSource = {
   SHOUTCAST_V1: 'SHOUTCAST_V1',
   SHOUTCAST_V2: 'SHOUTCAST_V2',
   STREAM: 'STREAM',
@@ -10,7 +10,7 @@ var StreamSource = {
 };
 
 function getStationInfo(url, callback, method) {
-  var methodHandler = undefined;
+  let methodHandler = undefined;
 
   switch (method) {
     case StreamSource.SHOUTCAST_V1:
