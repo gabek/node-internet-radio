@@ -1,29 +1,29 @@
-const icecast = require('./lib/icecast.js');
-const shoutcast = require('./lib/shoutcast.js');
-const icystream = require('./lib/icystream.js');
+import { getIcecastStation } from './lib/icecast.js';
+import { getShoutcastV1Station, getShoutcastV2Station } from './lib/shoutcast.js';
+import { getStreamStation } from './lib/icystream.js';
 
-const StreamSource = {
+export const StreamSource = {
   SHOUTCAST_V1: 'SHOUTCAST_V1',
   SHOUTCAST_V2: 'SHOUTCAST_V2',
   STREAM: 'STREAM',
   ICECAST: 'ICECAST'
 };
 
-function getStationInfo(url, callback, method) {
+export function getStationInfo(url, callback, method) {
   let methodHandler = undefined;
 
   switch (method) {
     case StreamSource.SHOUTCAST_V1:
-      methodHandler = shoutcast.getShoutcastV1Station;
+      methodHandler = getShoutcastV1Station;
       break;
     case StreamSource.SHOUTCAST_V2:
-      methodHandler = shoutcast.getShoutcastV2Station;
+      methodHandler = getShoutcastV2Station;
       break;
     case StreamSource.ICECAST:
-      methodHandler = icecast.getIcecastStation;
+      methodHandler = getIcecastStation;
       break;
     case StreamSource.STREAM:
-      methodHandler = icystream.getStreamStation;
+      methodHandler = getStreamStation;
       break;
     default:
   }
@@ -112,6 +112,3 @@ function getStationInfo(url, callback, method) {
     }
   }
 }
-
-module.exports.StreamSource = StreamSource;
-module.exports.getStationInfo = getStationInfo;
