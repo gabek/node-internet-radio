@@ -1,6 +1,6 @@
-import chai, { expect, assert } from 'chai';
-import { StreamSource } from '../index.js';
-import { parseV1Response } from '../lib/shoutcast.js';
+import { expect } from 'chai';
+import { StreamSource } from '../src/index';
+import { parseV1Response } from '../src/lib/shoutcast';
 
 const v1TestData = '<HTML><meta http-equiv="Pragma" content="no-cache"></head><body>84,1,135,150,81,128,Sisters Of Mercy, The - Black Planet</body></html>';
 

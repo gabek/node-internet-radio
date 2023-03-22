@@ -1,6 +1,6 @@
-import chai, { expect, assert } from 'chai';
-import { parseV2Response } from '../lib/shoutcast.js';
-import { StreamSource } from '../index.js';
+import { expect } from 'chai';
+import { parseV2Response } from '../src/lib/shoutcast';
+import { StreamSource } from '../src/index';
 import { readFile } from 'fs';
 
 const testUrl = "http://cheapshoutcast.com/centovacastv3-shoutcastv2-demo";

@@ -2,9 +2,9 @@
 // Since it requires connecting to a raw socket to parse data I'm
 // not sure how to test the functionality without actually connecting.
 // On the plus side, it's more valid of a test.
-import chai, { expect, assert } from 'chai';
-import { getStreamStation } from '../lib/icystream.js';
-import { StreamSource } from '../index.js';
+import { expect } from 'chai';
+import { getStreamStation } from '../src/lib/icystream';
+import { StreamSource } from '../src/index';
 
 const testStream = "http://ice1.somafm.com/groovesalad-128-mp3";
 

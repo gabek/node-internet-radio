@@ -1,7 +1,7 @@
-import chai, { expect, assert } from 'chai';
-import { parseIcecastResponse } from '../lib/icecast.js';
+import { expect } from 'chai';
+import { parseIcecastResponse } from '../src/lib/icecast';
 import { readFile } from 'fs';
-import { StreamSource } from '../index.js';
+import { StreamSource } from '../src/index';
 
 const stream = "http://tomoradio.servemp3.com:8000/listen.aac";
 

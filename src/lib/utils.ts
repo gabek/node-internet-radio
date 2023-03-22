@@ -1,4 +1,4 @@
-export function fixTrackTitle(trackString) {
+export function fixTrackTitle(trackString: string) {
   try {
     if (trackString.split(",").length > 1 && trackString.indexOf(", The -") !== -1) {
       let titleArtist = trackString.split(",")[0];

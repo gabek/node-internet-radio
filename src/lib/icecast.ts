@@ -2,7 +2,7 @@ import axios from 'axios';
 import { parse } from 'url';
 import { fixTrackTitle } from './utils.js';
 
-export async function getIcecastStation(url, callback) {
+export async function getIcecastStation(url: string, callback: (error: any, station?: any) => void) {
   const urlObject = parse(url);
   const icecastJsonUrl =
     urlObject.protocol +
@@ -13,7 +13,7 @@ export async function getIcecastStation(url, callback) {
     '/status-json.xsl';
 
   try {
-    let request = await axios.get(icecastJsonUrl, {
+    let response = await axios.get(icecastJsonUrl, {
       timeout: 1500,
       responseType: 'text',
     });
@@ -35,7 +35,7 @@ export async function getIcecastStation(url, callback) {
   }
 }
 
-export function parseIcecastResponse(url, body, callback) {
+export function parseIcecastResponse(url: string, body: any, callback: (error: any, station?: any) => void) {
   let stationObject;
   try {
     stationObject = JSON.parse(body);

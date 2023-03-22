@@ -3,7 +3,7 @@ import { parseString as parseXmlString } from 'xml2js';
 import { parse } from 'url';
 import { fixTrackTitle } from './utils.js';
 
-export async function getShoutcastV1Station(url, callback) {
+export async function getShoutcastV1Station(url: string, callback: (error: any, station?: any) => void) {
   url = url + '/7.html';
 
   try {
@@ -32,7 +32,7 @@ export async function getShoutcastV1Station(url, callback) {
   }
 }
 
-export async function getShoutcastV2Station(url, callback) {
+export async function getShoutcastV2Station(url: string, callback: (error: any, station?: any) => void) {
   const urlObject = parse(url);
   const v2StatsUrl =
     urlObject.protocol +
@@ -53,13 +53,13 @@ export async function getShoutcastV2Station(url, callback) {
       return callback(new Error('HTTP error.'));
     }
     
-    parseV2Response(url, body, callback);
+    parseV2Response(url, response.data, callback);
   } catch (error) {
     return callback(error);
   }
 }
 
-export function parseV1Response(body, callback) {
+export function parseV1Response(body: any, callback: (error: any, station?: any) => void) {
   const csvArrayParsing = /<body>(.*)<\/body>/im.exec(body);
 
   if (!csvArrayParsing || typeof csvArrayParsing.length !== 'number') {
@@ -67,7 +67,7 @@ export function parseV1Response(body, callback) {
   }
 
   const csvArray = csvArrayParsing[1].split(',');
-  let title = undefined;
+  let title;
 
   if (csvArray && csvArray.length == 7) {
     title = csvArray[6];
@@ -91,14 +91,14 @@ export function parseV1Response(body, callback) {
   }
 }
 
-export function parseV2Response(url, body, callback) {
+export function parseV2Response(url: string, body: string, callback: (error: any, station?: any) => void) {
   parseXmlString(body, function(error, result) {
     if (error) {
       return callback(error);
     }
     const numberOfStreamsAvailable =
       result.SHOUTCASTSERVER.STREAMSTATS[0].STREAM.length;
-    let stationStats = null;
+    let stationStats: any | null = null;
 
     if (numberOfStreamsAvailable === 1) {
       stationStats = result.SHOUTCASTSERVER.STREAMSTATS[0].STREAM[0];

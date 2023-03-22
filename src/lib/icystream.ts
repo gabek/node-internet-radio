@@ -1,13 +1,13 @@
 import { parse } from 'url';
-import { connect } from 'tls';
+import { TLSSocket, connect } from 'tls';
 import { Socket } from 'net';
 import { fixTrackTitle } from './utils.js';
-import packageJson from '../package.json' assert {type: 'json'};
+import packageJson from '../../package.json';
 
 const version = packageJson.version;
 const clientName = 'node-internet-radio v' + version;
 
-export function getStreamStation(url, callback) {
+export function getStreamStation(url: string, callback: (error: any, station?: any) => void) {
   const urlString = url;
   let completed = false;
   let buffer = '';
@@ -36,25 +36,25 @@ export function getStreamStation(url, callback) {
   }
 
   let getString = 'GET ' + parsedUrl.path + ' HTTP/1.0\r\n' + headers + '\r\n\r\n';
-  let client;
+  let client: Socket | TLSSocket | null;
 
   if (parsedUrl.protocol === 'http:') {
-    const port = parsedUrl.port || 80;
+    const port = Number(parsedUrl.port) || 80;
 
     client = new Socket();
     client.setTimeout(5);
     client.setEncoding('utf8');
-    client.connect(port, parsedUrl.hostname, function () {
-      client.write(getString);
+    client.connect(port, parsedUrl.hostname as string, function () {
+      client && client.write(getString);
     });
   } else if (parsedUrl.protocol === 'https:') {
-    const port = parsedUrl.port || 443;
+    const port = Number(parsedUrl.port) || 443;
     client = connect(
       port,
-      parsedUrl.hostname,
-      { ecdhCurve: false, servername: parsedUrl.hostname },
+      parsedUrl.hostname as string,
+      { ecdhCurve: "auto", servername: parsedUrl.hostname as string },
       function () {
-        client.write(getString);
+        client && client.write(getString);
       }
     );
   } else {
@@ -68,7 +68,7 @@ export function getStreamStation(url, callback) {
   client.on('error', errorCallback);
   client.on('close', closeCallback);
 
-  function dataCallback(response) {
+  function dataCallback(response: any) {
     const responseString = response.toString();
 
     // Append to the buffer and check if our title is fully included yet
@@ -88,7 +88,7 @@ export function getStreamStation(url, callback) {
     }
   }
 
-  function errorCallback(error) {
+  function errorCallback(error: any) {
     if (completed) {
       return;
     }
@@ -118,7 +118,7 @@ export function getStreamStation(url, callback) {
     clearTimeout(timeout);
 
     completed = true;
-    buffer = null;
+    buffer = '';
 
     if (client != null) {
       client.destroy();
@@ -126,10 +126,9 @@ export function getStreamStation(url, callback) {
     }
   }
 
-  function getDetailsFromBuffer(buffer) {
+  function getDetailsFromBuffer(buffer: any) {
     const startSubstring = 'StreamTitle=';
     const startPosition = buffer.indexOf(startSubstring);
-    const endSubstring = ';';
     const endPosition = buffer.toString().indexOf(';', startPosition);
 
     if (startPosition > -1 && endPosition > startPosition) {
@@ -141,9 +140,9 @@ export function getStreamStation(url, callback) {
     return null;
   }
 
-  function getHeadersFromBuffer(buffer) {
+  function getHeadersFromBuffer(buffer: string) {
     let headersArray = buffer.split('\n');
-    let headersObject = {};
+    let headersObject: {[index: string]: string} = {};
 
     headersArray
       .filter(function (line) {
@@ -162,7 +161,7 @@ export function getStreamStation(url, callback) {
     return headersObject;
   }
 
-  function handleBuffer(buffer, callback) {
+  function handleBuffer(buffer: string, callback: (error: any, station?: any) => void) {
     let title = getDetailsFromBuffer(buffer);
     title = fixTrackTitle(title);
 
@@ -177,7 +176,7 @@ export function getStreamStation(url, callback) {
     return callback(null, station);
   }
 
-  function handleRedirect(buffer) {
+  function handleRedirect(buffer: string) {
     const redirectTest = /Location: (.*)/mi.exec(buffer);
     if (redirectTest) {
       // Redirect!
@@ -196,7 +195,7 @@ export function getStreamStation(url, callback) {
     return false;
   }
 
-  function areThereErrors(buffer) {
+  function areThereErrors(buffer: string) {
     // If we get back HTML there's a problem
     const contentTypeTest = /Content-Type: text\/html(.*)/m.exec(buffer);
     if (contentTypeTest) {

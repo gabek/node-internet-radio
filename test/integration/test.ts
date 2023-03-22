@@ -1,7 +1,7 @@
 // This is an integration test that can be fired manually with a station of your choice.
 // It's here mostly as a troubelshooting option when working with streams.
-import chai, { expect, assert} from 'chai';
-import { getStationInfo } from '../../index.js';
+import { expect } from 'chai';
+import { getStationInfo } from '../../src/index';
 
 const testStream = "http://ice1.somafm.com/groovesalad-128.mp3";
 
