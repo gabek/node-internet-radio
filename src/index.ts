@@ -1,6 +1,6 @@
-import { getIcecastStation } from './lib/icecast.js';
-import { getShoutcastV1Station, getShoutcastV2Station } from './lib/shoutcast.js';
-import { getStreamStation } from './lib/icystream.js';
+import { getIcecastStation } from './lib/icecast';
+import { getShoutcastV1Station, getShoutcastV2Station } from './lib/shoutcast';
+import { getStreamStation } from './lib/icystream';
 
 export const StreamSource = {
   SHOUTCAST_V1: 'SHOUTCAST_V1',
